@@ -39,6 +39,7 @@ This project was built as a frontend practice exercise, focusing on a warm visua
 .
 ├── assets/
 │   ├── logo-principal-hd.png
+│   ├── atelier-gradina.png
 │   ├── atelier-capsunica.png
 │   ├── atelier-cos-fructe.png
 │   ├── atelier-platou-fructe.png
@@ -47,7 +48,9 @@ This project was built as a frontend practice exercise, focusing on a warm visua
 │   ├── atelier-ursulet.png
 │   ├── atelier-unicornul-fermecat.png
 │   ├── atelier-calutii-veseli.png
-│   └── atelier-girafa-vesela.png
+│   ├── atelier-girafa-vesela.png
+│   ├── atelier-girafa-poznasa.png
+│   └── atelier-masinuta-fulger.png
 ├── index.html
 ├── styles.css
 ├── script.js
