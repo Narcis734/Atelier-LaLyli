@@ -94,6 +94,9 @@ document.querySelector('#registration-form').addEventListener('submit', (event) 
 const workshopSelect = document.querySelector('#workshop');
 const childAgeSelect = document.querySelector('#child-age');
 const workshopRanges = {
+  'Unicornul fermecat': [7, 10],
+  'Căluții veseli': [10, 13],
+  'Girafa veselă': [7, 12],
   'Căpșunica veselă': [5, 7],
   'Coșul fermecat cu fructe': [7, 10],
   'Platoul cu fructe de vară': [10, 13],
@@ -123,6 +126,7 @@ filterWorkshopsByAge();
 const form = document.querySelector('#registration-form');
 const removedWorkshop = [...workshopSelect.options].find((option) => option.textContent.trim() === 'Coșulețul cu bucurii');
 removedWorkshop?.remove();
+['Unicornul fermecat', 'Căluții veseli', 'Girafa veselă'].forEach((label) => workshopSelect.add(new Option(label, label)));
 const oldWorkshopOptions = [...workshopSelect.options].filter((option) => option.value).map((option) => ({ value: option.value, label: option.textContent }));
 const childrenField = document.createElement('fieldset');
 childrenField.className = 'children-field';
