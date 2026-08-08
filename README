@@ -1,51 +1,44 @@
-# LaLyli — Ateliere creative pentru copii
+# LaLyli — Creative Workshops for Kids
 
-Landing page responsive pentru LaLyli, un atelier de activități creative pentru copii din Iași.
+Responsive landing page for LaLyli, a creative workshop center for children based in Iași, Romania.
 
-Proiectul a fost realizat ca exercițiu de frontend și pune accent pe o experiență vizuală caldă, navigare simplă și înscriere rapidă la ateliere.
+This project was built as a frontend practice exercise, focusing on a warm visual experience, simple navigation, and quick workshop registration.
 
 ## Demo
 
-Adaugă aici linkul către versiunea publicată a proiectului:
+🔗 **Live Preview:** [narcis734.github.io/Atelier-LaLyli/](https://narcis734.github.io/Atelier-LaLyli/)
 
-`https://linkul-tau-live.com`
+## Features
 
-## Funcționalități
+- **Responsive Layout:** Optimized for desktop, tablet, and mobile devices (includes a dedicated mobile menu).
+- **Workshop Catalog:** Showcases 9 creative workshops with recommended age groups and pricing.
+- **Interactive Photo Gallery:** Lightbox modal with next/previous navigation and keyboard support.
+- **Dynamic Registration Form:**
+  - Support for registering single or multiple children.
+  - Workshop selection filtered by the child's age.
+  - Preferred date and time selection.
+  - Basic HTML form validation and post-submission confirmation message.
+- **UX & Accessibility:**
+  - Smooth scrolling navigation.
+  - "Back to Top" button.
+  - Scroll-triggered animations via Intersection Observer API.
+  - Accessibility features (`alt` tags, `aria-label`, `aria-expanded`, skip link).
 
-- layout responsive pentru desktop, tabletă și mobil;
-- navigare prin secțiunile paginii;
-- meniu mobil;
-- secțiune de prezentare a atelierelor;
-- catalog cu 9 ateliere creative, cu vârste și prețuri afișate;
-- galerie de imagini cu lightbox și navigare înainte/înapoi;
-- suport pentru tastatură în galerie;
-- formular dinamic de înscriere pentru unul sau mai mulți copii;
-- selectarea atelierului în funcție de vârsta copilului;
-- alegerea datei și orei dorite;
-- validare HTML de bază a formularului;
-- mesaj de confirmare după trimiterea cererii;
-- buton „înapoi sus”;
-- animații la derularea paginii;
-- elemente de accesibilitate precum `alt`, `aria-label`, `aria-expanded` și skip link.
+## Tech Stack
 
-## Tehnologii folosite
+- Semantic HTML5
+- CSS3 (Flexbox & CSS Grid)
+- Vanilla JavaScript
+- Intersection Observer API
+- Google Fonts
+- FormSubmit (for handling form submissions)
 
-- HTML5 semantic;
-- CSS3;
-- JavaScript vanilla;
-- CSS Grid și Flexbox;
-- Intersection Observer API;
-- Google Fonts;
-- FormSubmit pentru trimiterea formularului.
-
-## Structura proiectului
+## Project Structure
 
 ```text
 .
 ├── assets/
-│   ├── logo-principal.png
 │   ├── logo-principal-hd.png
-│   ├── atelier-gradina.png
 │   ├── atelier-capsunica.png
 │   ├── atelier-cos-fructe.png
 │   ├── atelier-platou-fructe.png
@@ -61,48 +54,54 @@ Adaugă aici linkul către versiunea publicată a proiectului:
 └── README.md
 ```
 
-## Rulare locală
+Local Setup
 
-Proiectul nu necesită instalarea unor dependințe.
+This is a static project and does not require any build tools or dependencies.
 
-1. Clonează repository-ul:
+1. Clone the repository:
 
-   ```bash
-   git clone URL_REPOSITORY
+   ```Bash
+   git clone [https://github.com/narcis734/Atelier-LaLyli.git](https://github.com/narcis734/Atelier-LaLyli.git)
    ```
 
-2. Intră în folderul proiectului:
+2. Navigate to the project directory:
 
-   ```bash
-   cd MyProject
+   ```Bash
+   cd Atelier-LaLyli
    ```
 
-3. Deschide `index.html` în browser.
+3. Open index.html in your browser or run it with the Live Server extension in Visual Studio Code.
 
-Pentru o experiență mai apropiată de un mediu real, proiectul poate fi pornit cu extensia **Live Server** din Visual Studio Code sau cu orice server static local.
+## Registration Form Handling
 
-## Formularul de înscriere
+The registration form utilizes the external service [FormSubmit](https://formsubmit.co/) to deliver booking requests straight to email without requiring a custom backend.
 
-Formularul folosește serviciul extern [FormSubmit](https://formsubmit.co/) pentru a trimite cererile pe e-mail. Proiectul este în principal frontend și nu are momentan un backend propriu sau o bază de date.
+Note: In a production environment, request handling would ideally be moved to a dedicated backend API with anti-spam protection and database storage.
 
-Într-o versiune de producție ar fi recomandată mutarea procesării formularului într-un backend securizat, cu protecție anti-spam și stocare controlată a datelor.
+## Roadmap & Planned Improvements
 
-## Îmbunătățiri planificate
+[ ] Migrate the UI to a modern framework (React).
 
-- migrarea interfeței într-un framework precum React;
-- conectarea la un backend și la o bază de date;
-- calendar cu locurile disponibile pentru fiecare atelier;
-- autentificare pentru administrarea atelierelor;
-- filtrare și sortare a atelierelor;
-- optimizarea imaginilor și audit Lighthouse;
-- teste pentru formular și componentele interactive;
-- pagină separată pentru fiecare atelier;
-- traducere în limba engleză.
+[ ] Develop a backend service with database integration.
 
-## Scopul proiectului
+[ ] Interactive calendar displaying real-time available slots.
 
-Acest proiect demonstrează abilitatea de a construi o interfață frontend completă, responsive și interactivă folosind tehnologii web de bază, cu atenție la design, accesibilitate și experiența utilizatorului.
+[ ] Admin panel authentication for managing workshops.
+
+[ ] Workshop filtering and sorting options.
+
+[ ] Image optimization and Lighthouse performance audit.
+
+[ ] Unit and integration testing for interactive UI components.
+
+[ ] Dedicated details page for each workshop.
+
+[ ] Multi-language support (Romanian / English).
+
+## Project Goal
+
+This project demonstrates the ability to build a complete, responsive, and interactive frontend interface using core web technologies, with attention to design, accessibility, and user experience.
 
 ## Autor
 
-Realizat de **Narcis**.
+Created by Narcis
