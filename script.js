@@ -40,11 +40,18 @@ dateInput.min = new Date().toISOString().split('T')[0];
 const timeLabel = document.createElement('label');
 timeLabel.htmlFor = 'workshop-time';
 timeLabel.textContent = 'Ora dorită';
-const timeInput = document.createElement('input');
+const timeInput = document.createElement('select');
 timeInput.id = 'workshop-time';
-timeInput.type = 'time';
-timeInput.step = '900';
+timeInput.setAttribute('aria-label', 'Ora dorită');
 timeInput.required = true;
+timeInput.innerHTML = '<option value="">Alege ora</option>';
+for (let hour = 8; hour <= 18; hour += 1) {
+  for (let minute = 0; minute < 60; minute += 30) {
+    if (hour === 18 && minute > 0) break;
+    const value = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+    timeInput.add(new Option(value, value));
+  }
+}
 const childrenLabel = document.createElement('label');
 childrenLabel.htmlFor = 'children-count';
 childrenLabel.textContent = 'Număr copii';
@@ -97,6 +104,8 @@ const workshopRanges = {
   'Unicornul fermecat': [7, 10],
   'Căluții veseli': [10, 13],
   'Girafa veselă': [7, 12],
+  'Girafa poznasă': [5, 10],
+  'Mașinuța Fulger': [5, 10],
   'Căpșunica veselă': [5, 7],
   'Coșul fermecat cu fructe': [7, 10],
   'Platoul cu fructe de vară': [10, 13],
@@ -126,7 +135,7 @@ filterWorkshopsByAge();
 const form = document.querySelector('#registration-form');
 const removedWorkshop = [...workshopSelect.options].find((option) => option.textContent.trim() === 'Coșulețul cu bucurii');
 removedWorkshop?.remove();
-['Unicornul fermecat', 'Căluții veseli', 'Girafa veselă'].forEach((label) => workshopSelect.add(new Option(label, label)));
+['Unicornul fermecat', 'Căluții veseli', 'Girafa veselă', 'Girafa poznasă', 'Mașinuța Fulger'].forEach((label) => workshopSelect.add(new Option(label, label)));
 const oldWorkshopOptions = [...workshopSelect.options].filter((option) => option.value).map((option) => ({ value: option.value, label: option.textContent }));
 const childrenField = document.createElement('fieldset');
 childrenField.className = 'children-field';
