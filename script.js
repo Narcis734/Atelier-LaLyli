@@ -307,7 +307,7 @@ document.addEventListener('keydown', (event) => {
 });
 
 const backToTop = document.querySelector('.back-to-top');
-const revealItems = document.querySelectorAll('section, .workshop-card, footer');
+const revealItems = document.querySelectorAll('.workshop-card, footer');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
 }, { threshold: 0.12 });
