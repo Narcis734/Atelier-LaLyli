@@ -16,6 +16,7 @@ Adaugă aici linkul către versiunea publicată a proiectului:
 - navigare prin secțiunile paginii;
 - meniu mobil;
 - secțiune de prezentare a atelierelor;
+- catalog cu 9 ateliere creative, cu vârste și prețuri afișate;
 - galerie de imagini cu lightbox și navigare înainte/înapoi;
 - suport pentru tastatură în galerie;
 - formular dinamic de înscriere pentru unul sau mai mulți copii;
@@ -44,7 +45,16 @@ Adaugă aici linkul către versiunea publicată a proiectului:
 ├── assets/
 │   ├── logo-principal.png
 │   ├── logo-principal-hd.png
-│   └── imaginile atelierelor
+│   ├── atelier-gradina.png
+│   ├── atelier-capsunica.png
+│   ├── atelier-cos-fructe.png
+│   ├── atelier-platou-fructe.png
+│   ├── atelier-casuta-zanelor.png
+│   ├── atelier-panda.png
+│   ├── atelier-ursulet.png
+│   ├── atelier-unicornul-fermecat.png
+│   ├── atelier-calutii-veseli.png
+│   └── atelier-girafa-vesela.png
 ├── index.html
 ├── styles.css
 ├── script.js
@@ -96,4 +106,3 @@ Acest proiect demonstrează abilitatea de a construi o interfață frontend comp
 ## Autor
 
 Realizat de **Narcis**.
-
