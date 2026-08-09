@@ -204,6 +204,19 @@ const addChildCard = () => { childrenList.append(createChildCard()); refreshChil
 addChildButton.addEventListener('click', addChildCard);
 addChildCard();
 
+// Rezervarea din anunț precompletează atelierul, data și ora următorului atelier.
+const nextWorkshopLink = document.querySelector('.announcement a[href="#inscriere"]');
+nextWorkshopLink?.addEventListener('click', () => {
+  dateInput.value = nextWorkshopLink.dataset.date || '';
+  timeInput.value = nextWorkshopLink.dataset.time || '';
+  const firstWorkshop = childrenList.querySelector('.child-workshop-field');
+  const requestedWorkshop = nextWorkshopLink.dataset.workshop;
+  if (firstWorkshop && requestedWorkshop) {
+    const matchingOption = [...firstWorkshop.options].find((option) => option.textContent.trim() === requestedWorkshop);
+    if (matchingOption) firstWorkshop.value = matchingOption.value;
+  }
+});
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   return;
