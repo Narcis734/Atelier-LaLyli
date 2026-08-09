@@ -24,7 +24,16 @@ const phoneInput = document.createElement('input');
 phoneInput.id = 'phone';
 phoneInput.type = 'tel';
 phoneInput.placeholder = '07xx xxx xxx';
+phoneInput.inputMode = 'numeric';
+phoneInput.minLength = 10;
+phoneInput.maxLength = 10;
+phoneInput.pattern = '07[0-9]{8}';
+phoneInput.title = 'Introdu un număr de telefon mobil din România, format din exact 10 cifre și început cu 07.';
 phoneInput.required = true;
+phoneInput.addEventListener('input', () => {
+  // Păstrează doar cifrele și limitează numărul la 10 caractere.
+  phoneInput.value = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+});
 emailLabel.textContent = 'Adresă de e-mail';
 const emailInput = document.querySelector('#email');
 emailInput.type = 'email';
