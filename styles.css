@@ -18,3 +18,8 @@
   .marquee div{font-size:10px;letter-spacing:.08em;line-height:1.9}
   .marquee span{padding:0 8px}
 }
+
+/* Păstrează acțiunea de rezervare accesibilă și pe ecrane mici. */
+@media(max-width:760px){
+  .announcement a{display:inline-block;margin-left:8px}
+}
