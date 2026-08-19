@@ -1,84 +1,539 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LaLyli — ateliere creative pentru copii în Iași, cu pastă de zahăr necomestibilă." />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light"/>
+  <meta name="theme-color" content="#e75a7b"/>
+  <meta
+    name="description"
+    content="LaLyli — ateliere creative pentru copii în Iași, cu pastă de zahăr necomestibilă."/>
   <title>LaLyli — Magie în detalii</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script type="module" src="script.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#acasa">Sari la conținut</a>
-  <div class="announcement"><span>✦</span> Următorul atelier: C&#259;lu&#539;ii veseli · Iași · 26 august 2026 · Ora: 10:00 <a href="#inscriere" data-date="2026-08-26" data-time="10:00" data-workshop="Căluții veseli">Rezervă un loc →</a></div>
-
-  <header class="site-header" id="acasa">
-    <nav class="nav wrap" aria-label="Navigație principală">
-      <a class="brand" href="#acasa" aria-label="LaLyli, pagina principală">
-        <span class="brand-mark">L</span><span>LaLyli</span>
+<a class="skip-link" href="#main">Sari la conținut</a>
+<div class="announcement">
+  <span aria-hidden="true">✦</span>
+  Următorul atelier: Căluții veseli · Iași · 26 august 2026 · Ora: 10:00
+  <a
+    href="#inscriere"
+    data-prefill-date="2026-08-26"
+    data-prefill-time="10:00"
+    data-prefill-workshop="Căluții veseli"
+  >Rezervă un loc →</a
+  >
+</div>
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Navigație principală">
+    <a class="brand" href="#top" aria-label="LaLyli, înapoi la începutul paginii">
+      <span class="brand-mark" aria-hidden="true">L</span>
+      <span>LaLyli</span>
+    </a>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Meniu principal"
+      aria-expanded="false"
+      aria-controls="nav-links"
+    ></button>
+    <div class="nav-links" id="nav-links">
+      <a href="#despre">Despre noi</a>
+      <a href="#ateliere">Ateliere</a>
+      <a href="#cum-functioneaza">Cum funcționează</a>
+      <a href="#contact">Contact</a>
+      <a href="#inscriere" class="button button-small">
+        Înscrie copilul <span aria-hidden="true">↗</span>
       </a>
-      <button class="menu-toggle" aria-label="Deschide meniul" aria-expanded="false">☰</button>
-      <div class="nav-links">
-        <a href="#despre">Despre noi</a><a href="#ateliere">Ateliere</a><a href="#cum-functioneaza">Cum funcționează</a><a href="#contact">Contact</a>
-        <a href="#inscriere" class="button button-small">Înscrie copilul <span>↗</span></a>
+    </div>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero wrap">
+    <div>
+      <p class="eyebrow">
+        <span class="eyebrow-line" aria-hidden="true"></span>
+        Ateliere creative pentru copii · Iași
+      </p>
+      <h1>Lucruri mici.<br/><em>Povești mari.</em></h1>
+      <p class="hero-text">
+        La LaLyli, fiecare copil își modelează propria poveste — cu mâinile,
+        cu imaginația și cu multă bucurie.
+      </p>
+      <div class="hero-actions">
+        <a href="#ateliere" class="button">
+          Descoperă atelierele <span aria-hidden="true">↗</span>
+        </a>
+        <a href="#despre" class="text-link">
+          Află povestea noastră <span aria-hidden="true">↓</span>
+        </a>
       </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero wrap">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-line"></span> Ateliere creative pentru copii · Iași</p>
-        <h1>Lucruri mici.<br /><em>Povești mari.</em></h1>
-        <p class="hero-text">La LaLyli, fiecare copil își modelează propria poveste — cu mâinile, cu imaginația și cu multă bucurie.</p>
-        <div class="hero-actions"><a href="#ateliere" class="button">Descoperă atelierele <span>↗</span></a><a href="#despre" class="text-link">Află povestea noastră <span>↓</span></a></div>
-        <div class="hero-note"><span class="note-icon">✿</span><span>Pastă de zahăr <strong>necomestibilă</strong><br />Sigură, colorată și numai bună de creat.</span></div>
+      <p class="hero-note">
+        <span class="note-icon" aria-hidden="true">✿</span>
+        <span>
+              Pastă de zahăr <strong>necomestibilă</strong><br/>
+              Sigură, colorată și numai bună de creat.
+            </span>
+      </p>
+    </div>
+    <div class="hero-art">
+      <div class="art-circle" aria-hidden="true"></div>
+      <div class="sparkle sparkle-one" aria-hidden="true">✦</div>
+      <div class="sparkle sparkle-two" aria-hidden="true">✧</div>
+      <figure class="poster-frame">
+        <button class="zoom-button" type="button" aria-label="Mărește logo-ul LaLyli">
+          <img
+            src="assets/logo.png"
+            alt="LaLyli — magie în detalii"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </button>
+      </figure>
+    </div>
+  </section>
+  <section class="value-band" aria-label="Valorile atelierului">
+    <span>IMAGINAȚIE</span>
+    <i aria-hidden="true">✦</i>
+    <span>CULOARE</span>
+    <i aria-hidden="true">✦</i>
+    <span>JOACĂ</span>
+    <i aria-hidden="true">✦</i>
+    <span>MAGIE</span>
+  </section>
+  <section class="intro wrap" id="despre">
+    <p class="section-tag">01 / DESPRE LALYLI</p>
+    <div class="intro-content">
+      <h2>Un loc în care<br/><em>mânuțele creează.</em></h2>
+      <div>
+        <p>
+          LaLyli este atelierul în care cei mici descoperă cât de frumoasă
+          este lumea atunci când o construiești chiar tu.
+        </p>
+        <p>
+          Modelăm personaje, flori și lumi întregi din pastă de zahăr
+          necomestibilă — un material prietenos, maleabil și plin de
+          culoare.
+        </p>
+        <a class="text-link" href="#cum-functioneaza">
+          Descoperă experiența <span aria-hidden="true">↗</span>
+        </a>
       </div>
-      <div class="hero-art">
-        <div class="art-circle"></div><div class="sparkle sparkle-one">✦</div><div class="sparkle sparkle-two">✧</div>
-        <figure class="poster-frame logo-frame zoomable" tabindex="0" role="button" aria-label="Mărește logo-ul LaLyli"><img src="assets/logo-principal-hd.png" alt="LaLyli — magie în detalii" /></figure>
+    </div>
+    <ul class="values">
+      <li><b>01</b><strong>Creativitate<br/>fără limite</strong></li>
+      <li><b>02</b><strong>Răbdare și<br/>încredere</strong></li>
+      <li><b>03</b><strong>Amintiri<br/>colorate</strong></li>
+    </ul>
+  </section>
+  <section class="workshops wrap" id="ateliere">
+    <div class="section-heading">
+      <div>
+        <p class="section-tag">02 / ATELIERE</p>
+        <h2>Alege o lume<br/><em>de modelat.</em></h2>
       </div>
-    </section>
-
-    <section class="marquee"><div>IMAGINAȚIE <span>✦</span> CULOARE <span>✦</span> JOACĂ <span>✦</span> MAGIE <span>✦</span> IMAGINAȚIE <span>✦</span> CULOARE</div></section>
-
-    <section class="intro wrap" id="despre">
-      <div class="section-tag">01 / DESPRE LALYLI</div>
-      <div class="intro-content"><h2>Un loc în care<br /><em>mânuțele creează.</em></h2><div><p>LaLyli este atelierul în care cei mici descoperă cât de frumoasă este lumea atunci când o construiești chiar tu.</p><p>Modelăm personaje, flori și lumi întregi din pastă de zahăr necomestibilă — un material prietenos, maleabil și plin de culoare.</p><a class="text-link" href="#cum-functioneaza">Descoperă experiența <span>↗</span></a></div></div>
-      <div class="values"><div><b>01</b><strong>Creativitate<br />fără limite</strong></div><div><b>02</b><strong>Răbdare și<br />încredere</strong></div><div><b>03</b><strong>Amintiri<br />colorate</strong></div></div>
-    </section>
-
-    <section class="workshops wrap" id="ateliere">
-      <div class="section-heading"><div><div class="section-tag">02 / ATELIERE</div><h2>Alege o lume<br /><em>de modelat.</em></h2></div><p>Fiecare atelier este o mică aventură. Temele se schimbă, dar bucuria de a crea rămâne.</p></div>
-      <div class="cards"><article class="workshop-card featured"><div class="card-image zoomable" tabindex="0" role="button" aria-label="Mărește imaginea atelierului Grădina fermecată"><img src="assets/atelier-gradina.png" alt="Căsuță în grădina fermecată" /><span class="pill">5–10 ani</span></div><div class="card-body"><p class="card-kicker">ATELIER TEMATIC</p><h3>Grădina fermecată</h3><p>Construim o căsuță colorată, flori și personaje numai bune de pus într-o poveste.</p><div class="card-footer"><span>2 ore · 70 lei/copil</span><a href="#inscriere" aria-label="Înscrie-te la Grădina fermecată">↗</a></div></div></article>
-      <article class="workshop-card"><div class="card-image clay-image"><div class="clay-shape clay-one"></div><div class="clay-shape clay-two"></div><div class="clay-shape clay-three"></div><span class="pill">4–7 ani</span></div><div class="card-body"><p class="card-kicker">ATELIER DE JOACĂ</p><h3>Personaje pufoase</h3><p>Animăluțe, fluturași și prieteni imaginari modelați pas cu pas.</p><div class="card-footer"><span>1,5 ore · de la 60 lei</span><a href="#inscriere" aria-label="Înscrie-te la Personaje pufoase">↗</a></div></div></article>
-      <article class="workshop-card"><div class="card-image clay-image warm"><div class="clay-shape clay-four"></div><div class="clay-shape clay-five"></div><div class="clay-shape clay-six"></div><span class="pill">8–12 ani</span></div><div class="card-body"><p class="card-kicker">ATELIER DE DETALII</p><h3>Micii creatori</h3><p>Proiecte mai îndrăznețe pentru mânuțe curioase și idei mari.</p><div class="card-footer"><span>2 ore · de la 70 lei</span><a href="#inscriere" aria-label="Înscrie-te la Micii creatori">↗</a></div></div></article></div>
-      <div class="catalog-grid">
-        <article class="catalog-card zoomable" tabindex="0" role="button" aria-label="Vezi atelierul Căpșunica veselă"><img src="assets/atelier-platou-fructe.png" alt="Atelier Căpșunica veselă, 5–7 ani" /><div><h3>Căpșunica veselă</h3><p>5–7 ani · 50 lei / copil</p></div></article>
-        <article class="catalog-card zoomable" tabindex="0" role="button" aria-label="Vezi atelierul Coșul fermecat cu fructe"><img src="assets/atelier-cos-fructe.png" alt="Atelier Coșul fermecat cu fructe, 7–10 ani" /><div><h3>Coșul fermecat cu fructe</h3><p>7–10 ani · 70 lei / copil</p></div></article>
-        <article class="catalog-card zoomable" tabindex="0" role="button" aria-label="Vezi atelierul Platoul cu fructe de vară"><img src="assets/atelier-capsunica.png" alt="Atelier Platoul cu fructe de vară, 10–13 ani" /><div><h3>Platoul cu fructe de vară</h3><p>10–13 ani · 85 lei / copil</p></div></article>
-        <article class="catalog-card zoomable" tabindex="0" role="button" aria-label="Vezi atelierul Căsuța zânelor"><img src="assets/atelier-casuta-zanelor.png" alt="Atelier Căsuța zânelor, 7–10 ani" /><div><h3>Căsuța zânelor</h3><p>7–10 ani · 70 lei / copil</p></div></article>
-        <article class="catalog-card zoomable" tabindex="0" role="button" aria-label="Vezi atelierul Unicornul fermecat"><img src="assets/atelier-unicornul-fermecat.png" alt="Atelier Unicornul fermecat, 7–10 ani" /><div><h3>Unicornul fermecat</h3><p>7–10 ani · 80 lei / copil</p></div></article>
-        <article class="catalog-card zoomable" tabindex="0" role="button" aria-label="Vezi atelierul Girafa veselă"><img src="assets/atelier-girafa-vesela.png" alt="Atelier Girafa veselă, 7–12 ani" /><div><h3>Girafa veselă</h3><p>7–12 ani · 80 lei / copil</p></div></article>
-        <article class="catalog-card zoomable" tabindex="0" role="button" aria-label="Vezi atelierul Girafa poznasă"><img src="assets/atelier-girafa-poznasa.png" alt="Atelier Girafa poznasă, 5–10 ani" /><div><h3>Girafa poznasă</h3><p>5–10 ani · 55 lei / copil</p></div></article>
-        <article class="catalog-card zoomable" tabindex="0" role="button" aria-label="Vezi atelierul Panda cu inimă"><img src="assets/atelier-panda.png" alt="Atelier Panda cu inimă, 5–10 ani" /><div><h3>Panda cu inimă</h3><p>5–10 ani · 55 lei / copil</p></div></article>
-        <article class="catalog-card zoomable" tabindex="0" role="button" aria-label="Vezi atelierul Ursuleț cu fustiță"><img src="assets/atelier-ursulet.png" alt="Atelier Ursuleț cu fustiță, 5–10 ani" /><div><h3>Ursuleț cu fustiță</h3><p>5–10 ani · 55 lei / copil</p></div></article>
-        <article class="catalog-card zoomable" tabindex="0" role="button" aria-label="Vezi atelierul Căluții veseli"><img src="assets/atelier-calutii-veseli.png" alt="Atelier Căluții veseli, 10–13 ani" /><div><h3>Căluții veseli</h3><p>10–13 ani · 85 lei / copil</p></div></article>
-        <article class="catalog-card zoomable" tabindex="0" role="button" aria-label="Vezi atelierul Mașinuța Fulger"><img src="assets/atelier-masinuta-fulger.png" alt="Atelier Mașinuța Fulger, 5–10 ani" /><div><h3>Mașinuța Fulger</h3><p>5–10 ani · 55 lei / copil</p></div></article>
+      <p>
+        Fiecare atelier este o mică aventură. Temele se schimbă, dar bucuria
+        de a crea rămâne.
+      </p>
+    </div>
+    <div class="catalog-grid">
+      <article class="catalog-card" data-workshop="Căpșunica veselă" data-age-min="5">
+        <button class="zoom-button" type="button" aria-label="Vezi atelierul Căpșunica veselă">
+          <img src="assets/happy little strawberry workshop.png" alt="Atelier Căpșunica veselă, 5–7 ani" loading="lazy"
+               decoding="async"/>
+        </button>
+        <div class="catalog-card-body">
+          <h3>Căpșunica veselă</h3>
+          <p>5–7 ani · 50 lei / copil</p>
+        </div>
+      </article>
+      <article class="catalog-card" data-workshop="Coșul fermecat cu fructe" data-age-min="7">
+        <button class="zoom-button" type="button" aria-label="Vezi atelierul Coșul fermecat cu fructe">
+          <img src="assets/The enchanted basket workshop with fruits.png"
+               alt="Atelier Coșul fermecat cu fructe, 7–10 ani" loading="lazy" decoding="async"/>
+        </button>
+        <div class="catalog-card-body">
+          <h3>Coșul fermecat cu fructe</h3>
+          <p>7–10 ani · 70 lei / copil</p>
+        </div>
+      </article>
+      <article class="catalog-card" data-workshop="Platoul cu fructe de vară" data-age-min="10">
+        <button class="zoom-button" type="button" aria-label="Vezi atelierul Platoul cu fructe de vară">
+          <img src="assets/workshop summer fruit platter.png" alt="Atelier Platoul cu fructe de vară, 10–13 ani"
+               loading="lazy" decoding="async"/>
+        </button>
+        <div class="catalog-card-body">
+          <h3>Platoul cu fructe de vară</h3>
+          <p>10–13 ani · 85 lei / copil</p>
+        </div>
+      </article>
+      <article class="catalog-card" data-workshop="Căsuța zânelor" data-age-min="7">
+        <button
+          class="zoom-button"
+          type="button"
+          aria-label="Vezi atelierul Căsuța zânelor"
+        >
+          <img
+            src="assets/fairy house workshop.png"
+            alt="Atelier Căsuța zânelor, 7–10 ani"
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+        <div class="catalog-card-body">
+          <h3>Căsuța zânelor</h3>
+          <p>7–10 ani · 70 lei / copil</p>
+        </div>
+      </article>
+      <article class="catalog-card" data-workshop="Unicornul fermecat" data-age-min="7">
+        <button
+          class="zoom-button"
+          type="button"
+          aria-label="Vezi atelierul Unicornul fermecat"
+        >
+          <img
+            src="assets/Enchanted Unicorn Workshop.png"
+            alt="Atelier Unicornul fermecat, 7–10 ani"
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+        <div class="catalog-card-body">
+          <h3>Unicornul fermecat</h3>
+          <p>7–10 ani · 80 lei / copil</p>
+        </div>
+      </article>
+      <article class="catalog-card" data-workshop="Girafa veselă" data-age-min="7">
+        <button
+          class="zoom-button"
+          type="button"
+          aria-label="Vezi atelierul Girafa veselă"
+        >
+          <img
+            src="assets/happy giraffe workshop.png"
+            alt="Atelier Girafa veselă, 7–12 ani"
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+        <div class="catalog-card-body">
+          <h3>Girafa veselă</h3>
+          <p>7–12 ani · 80 lei / copil</p>
+        </div>
+      </article>
+      <article class="catalog-card" data-workshop="Girafa poznasă" data-age-min="5">
+        <button
+          class="zoom-button"
+          type="button"
+          aria-label="Vezi atelierul Girafa poznasă"
+        >
+          <img
+            src="assets/naughty giraffe workshop.png"
+            alt="Atelier Girafa poznasă, 5–10 ani"
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+        <div class="catalog-card-body">
+          <h3>Girafa poznasă</h3>
+          <p>5–10 ani · 55 lei / copil</p>
+        </div>
+      </article>
+      <article class="catalog-card" data-workshop="Panda cu inimă" data-age-min="5">
+        <button
+          class="zoom-button"
+          type="button"
+          aria-label="Vezi atelierul Panda cu inimă"
+        >
+          <img
+            src="assets/panda with a heart workshop.png"
+            alt="Atelier Panda cu inimă, 5–10 ani"
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+        <div class="catalog-card-body">
+          <h3>Panda cu inimă</h3>
+          <p>5–10 ani · 55 lei / copil</p>
+        </div>
+      </article>
+      <article class="catalog-card" data-workshop="Ursuleț cu fustiță" data-age-min="5">
+        <button
+          class="zoom-button"
+          type="button"
+          aria-label="Vezi atelierul Ursuleț cu fustiță"
+        >
+          <img
+            src="assets/Teddy bear with a skirt workshop.png"
+            alt="Atelier Ursuleț cu fustiță, 5–10 ani"
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+        <div class="catalog-card-body">
+          <h3>Ursuleț cu fustiță</h3>
+          <p>5–10 ani · 55 lei / copil</p>
+        </div>
+      </article>
+      <article class="catalog-card" data-workshop="Căluții veseli" data-age-min="10">
+        <button
+          class="zoom-button"
+          type="button"
+          aria-label="Vezi atelierul Căluții veseli"
+        >
+          <img
+            src="assets/workshop of happy little horses.png"
+            alt="Atelier Căluții veseli, 10–13 ani"
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+        <div class="catalog-card-body">
+          <h3>Căluții veseli</h3>
+          <p>10–13 ani · 85 lei / copil</p>
+        </div>
+      </article>
+      <article class="catalog-card" data-workshop="Mașinuța Fulger" data-age-min="5">
+        <button
+          class="zoom-button"
+          type="button"
+          aria-label="Vezi atelierul Mașinuța Fulger"
+        >
+          <img
+            src="assets/Lightning McQueen workshop.png"
+            alt="Atelier Mașinuța Fulger, 5–10 ani"
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+        <div class="catalog-card-body">
+          <h3>Mașinuța Fulger</h3>
+          <p>5–10 ani · 55 lei / copil</p>
+        </div>
+      </article>
+    </div>
+    <p class="center-link">
+      <a href="#inscriere" class="text-link">
+        Rezervă un atelier <span aria-hidden="true">↗</span>
+      </a>
+    </p>
+  </section>
+  <section class="how-it-works" id="cum-functioneaza">
+    <div class="wrap how-grid">
+      <div class="how-intro">
+        <p class="section-tag light">03 / EXPERIENȚA</p>
+        <h2>De la o idee<br/><em>la o poveste.</em></h2>
+        <p>Tot ce trebuie să aduci este curiozitatea. Noi pregătim restul.</p>
       </div>
-      <div class="center-link"><a href="#inscriere" class="text-link">Vezi toate atelierele <span>↗</span></a></div>
-    </section>
-
-    <section class="how-it-works" id="cum-functioneaza"><div class="wrap how-grid"><div><div class="section-tag light">03 / EXPERIENȚA</div><h2>De la o idee<br /><em>la o poveste.</em></h2><p>Tot ce trebuie să aduci este curiozitatea. Noi pregătim restul.</p></div><div class="steps"><div class="step"><span>01</span><div><h3>Ne întâlnim</h3><p>Într-un spațiu cald și primitor, în Iași.</p></div></div><div class="step"><span>02</span><div><h3>Învățăm & modelăm</h3><p>Descoperim tehnici simple, în ritmul fiecărui copil.</p></div></div><div class="step"><span>03</span><div><h3>Plecăm cu magia</h3><p>Fiecare copil ia acasă creația și amintirea unei zile speciale.</p></div></div></div></div></section>
-
-    <section class="signup wrap" id="inscriere"><div class="signup-card"><div class="signup-intro"><div class="section-tag">04 / ÎNSCRIERE</div><h2>Hai să creăm<br /><em>împreună.</em></h2><p>Spune-ne ce atelier ți-a făcut cu ochiul și revenim rapid cu toate detaliile.</p><div class="signup-perks"><span>✦ Materiale incluse</span><span>✦ Diplomă pentru fiecare copil</span><span>✦ Creația merge acasă</span></div></div><form id="registration-form"><label for="parent-name">Numele tău</label><input id="parent-name" type="text" placeholder="Cum te cheamă?" required /><label for="email">E-mail sau telefon</label><input id="email" type="text" placeholder="Unde te putem găsi?" required /><label for="workshop">Atelierul dorit</label><select id="workshop"><option value="">Alege un atelier</option><option>Căpșunica veselă</option><option>Coșul fermecat cu fructe</option><option>Platoul cu fructe de vară</option><option>Căsuța zânelor</option><option>Panda cu inimă</option><option>Ursuleț cu fustiță</option><option>Coșulețul cu bucurii</option></select><label for="child-age">Vârsta copilului</label><select id="child-age"><option value="">Alege vârsta</option><option>5–7 ani</option><option>7–10 ani</option><option>10–13 ani</option></select><button class="button" type="submit">Trimite cererea <span>↗</span></button><p class="form-message" role="status"></p></form></div></section>
-  </main>
-
-  <footer id="contact"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="#acasa"><span class="brand-mark">L</span><span>LaLyli</span></a><p>Magie în detalii.<br />Ateliere creative pentru copii în Iași.</p></div><div><span class="footer-label">Date de contact</span><p><a href="mailto:iulianapopovici01@gmail.com" target="_blank">iulianapopovici01@gmail.com</a><br /><a href="tel:+40752412720">0752412720</a></p></div><div><span class="footer-label">URMĂREȘTE-NE</span><p><a href="https://www.instagram.com/atelierlalyli?igsh=cDZtMWNldXYwdWtr" target="_blank">Instagram</a><br /><a href="https://www.facebook.com/popoviciiuliana01" target="_blank">Facebook</a><br><a href="https://www.tiktok.com/@bucataria.lili?_r=1&_t=ZN-98f6MpWkPbC" target="_blank">TikTok</a></p></div></div><div class="wrap footer-bottom"><span>© 2026 LaLyli</span><span>Făcut cu <i>♡</i> pentru mânuțe creative</span></div></footer>
-  <button class="back-to-top" type="button" aria-label="Înapoi sus">↑</button>
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Galerie imagini"><button class="lightbox-close" type="button" aria-label="Închide galeria">×</button><button class="lightbox-arrow lightbox-prev" type="button" aria-label="Imaginea anterioară">‹</button><img id="lightbox-image" src="" alt="" /><button class="lightbox-arrow lightbox-next" type="button" aria-label="Imaginea următoare">›</button><span class="lightbox-counter" id="lightbox-counter">1 / 7</span></div>
-  <script src="script.js"></script>
+      <ol class="steps">
+        <li class="step">
+          <span aria-hidden="true">01</span>
+          <div>
+            <h3>Ne întâlnim</h3>
+            <p>Într-un spațiu cald și primitor, în Iași.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span aria-hidden="true">02</span>
+          <div>
+            <h3>Învățăm &amp; modelăm</h3>
+            <p>Descoperim tehnici simple, în ritmul fiecărui copil.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span aria-hidden="true">03</span>
+          <div>
+            <h3>Plecăm cu magia</h3>
+            <p>
+              Fiecare copil ia acasă creația și amintirea unei zile speciale.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="signup wrap" id="inscriere">
+    <div class="signup-card">
+      <div class="signup-intro">
+        <p class="section-tag">04 / ÎNSCRIERE</p>
+        <h2>Hai să creăm<br/><em>împreună.</em></h2>
+        <p>
+          Spune-ne ce atelier ți-a făcut cu ochiul și revenim rapid cu toate
+          detaliile.
+        </p>
+        <ul class="signup-perks">
+          <li>✦ Materiale incluse</li>
+          <li>✦ Diplomă pentru fiecare copil</li>
+          <li>✦ Creația merge acasă</li>
+        </ul>
+      </div>
+      <form id="registration-form">
+        <label for="parent-name">Numele tău</label>
+        <input
+          id="parent-name"
+          name="parent-name"
+          type="text"
+          autocomplete="name"
+          placeholder="Cum te cheamă?"
+          required
+        />
+        <fieldset class="children-field">
+          <legend>Copiii înscriși</legend>
+          <p class="children-help">
+            Adaugă fiecare copil o singură dată. Data atelierului și datele
+            de contact rămân comune.
+          </p>
+          <div class="children-list"></div>
+          <button class="add-child" type="button">+ Adaugă încă un copil</button>
+        </fieldset>
+        <label for="phone">Număr de telefon</label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          autocomplete="tel"
+          inputmode="numeric"
+          placeholder="07xx xxx xxx"
+          pattern="07[0-9]{8}"
+          maxlength="10"
+          title="Introdu un număr de telefon mobil din România, format din exact 10 cifre și început cu 07."
+          required
+        />
+        <label for="workshop-date">Data dorită</label>
+        <input id="workshop-date" name="workshop-date" type="date" required/>
+        <label for="workshop-time">Ora dorită</label>
+        <input
+          id="workshop-time"
+          name="workshop-time"
+          type="time"
+          min="08:00"
+          max="18:00"
+          step="1800"
+          aria-describedby="time-help"
+          required
+        />
+        <small id="time-help" class="field-help">
+          Program: 08:00–18:00, la interval de 30 de minute.
+        </small>
+        <label for="email">Adresă de e-mail</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="exemplu@email.com"
+          required
+        />
+        <button class="button" type="submit">
+          Trimite cererea <span aria-hidden="true">↗</span>
+        </button>
+        <p class="form-message" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer id="contact">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand footer-brand" href="#">
+        <span class="brand-mark" aria-hidden="true">L</span>
+        <span>LaLyli</span>
+      </a>
+      <p>Magie în detalii.<br/>Ateliere creative pentru copii în Iași.</p>
+    </div>
+    <div>
+      <h2 class="footer-label">Date de contact</h2>
+      <p>
+        <a href="mailto:iulianapopovici01@gmail.com">iulianapopovici01@gmail.com</a>
+        <br/>
+        <a href="tel:+40752412720">0752 412 720</a>
+      </p>
+    </div>
+    <div>
+      <h2 class="footer-label">URMĂREȘTE-NE</h2>
+      <p>
+        <a
+          href="https://www.instagram.com/atelierlalyli?igsh=cDZtMWNldXYwdWtr"
+          target="_blank"
+          rel="noopener"
+        >Instagram</a
+        >
+        <br/>
+        <a
+          href="https://www.facebook.com/popoviciiuliana01"
+          target="_blank"
+          rel="noopener"
+        >Facebook</a
+        >
+        <br/>
+        <a
+          href="https://www.tiktok.com/@bucataria.lili?_r=1&amp;_t=ZN-98f6MpWkPbC"
+          target="_blank"
+          rel="noopener"
+        >TikTok</a
+        >
+      </p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 LaLyli</span>
+    <span>Făcut cu <i aria-hidden="true">♡</i> pentru mânuțe creative</span>
+  </div>
+</footer>
+<a class="back-to-top" href="#" aria-label="Înapoi sus">
+  <span aria-hidden="true">↑</span>
+</a>
+<dialog class="lightbox" id="lightbox" aria-label="Galerie imagini">
+  <button class="lightbox-close" type="button" aria-label="Închide galeria">×</button>
+  <button
+    class="lightbox-arrow lightbox-prev"
+    type="button"
+    aria-label="Imaginea anterioară"
+  >
+    ‹
+  </button>
+  <img id="lightbox-image" alt=""/>
+  <button
+    class="lightbox-arrow lightbox-next"
+    type="button"
+    aria-label="Imaginea următoare"
+  >
+    ›
+  </button>
+  <p class="lightbox-counter" id="lightbox-counter" aria-live="polite"></p>
+</dialog>
+<template id="child-card-template">
+  <div class="child-card">
+    <div class="child-card-heading">
+      <strong>Copil <span class="child-number"></span></strong>
+      <button type="button" class="remove-child">Șterge</button>
+    </div>
+    <label>
+      Numele copilului
+      <input type="text" class="child-name-field" placeholder="Numele copilului" required/>
+    </label>
+    <label>
+      Vârsta
+      <select class="child-age-field" required>
+        <option value="">Alege vârsta</option>
+        <option value="5–7 ani" data-min-age="5">5–7 ani</option>
+        <option value="7–10 ani" data-min-age="7">7–10 ani</option>
+        <option value="10–13 ani" data-min-age="10">10–13 ani</option>
+      </select>
+    </label>
+    <label>
+      Atelierul dorit
+      <select class="child-workshop-field" required>
+        <option value="">Alege un atelier</option>
+      </select>
+    </label>
+  </div>
+</template>
 </body>
 </html>
