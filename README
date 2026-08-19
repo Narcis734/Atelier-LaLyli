@@ -64,7 +64,7 @@ This is a static project and does not require any build tools or dependencies.
 1. Clone the repository:
 
    ```Bash
-   git clone [https://github.com/narcis734/Atelier-LaLyli.git] (https://github.com/narcis734/Atelier-LaLyli.git)
+   git clone (https://github.com/narcis734/Atelier-LaLyli.git)
    ```
 
 2. Navigate to the project directory:
