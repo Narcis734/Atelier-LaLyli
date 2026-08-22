@@ -380,12 +380,15 @@ button {
   z-index: 2;
   color: var(--pink);
   font-size: 28px;
+  pointer-events: none;
 }
 .sparkle-one {
-  inset: 54px auto auto 75px;
+  top: -10px;
+  left: -10px;
 }
 .sparkle-two {
-  inset: auto 33px 85px auto;
+  bottom: -10px;
+  right: -10px;
 }
 
 .poster-frame {
@@ -406,7 +409,7 @@ button {
 .poster-frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 .poster-frame:hover {
@@ -877,25 +880,25 @@ footer {
   font-weight: 300;
   cursor: pointer;
   transform: translateY(-50%);
-  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
-  user-select: none; /* ← nu se mai poate copia săgeata */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;        /* ← nou */
-  padding: 0;
+  user-select: none;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+
+  /* Păstrăm transition, dar o aplicăm doar pe proprietățile sigure */
+  transition: transform 0.2s var(--ease);
 }
-.lightbox-arrow:hover {
-  background: var(--pink);
-  border-color: var(--pink);
+.lightbox-arrow:active {
+  background: color-mix(in srgb, var(--pink) 40%, transparent); /* O culoare mai subtilă */
+  transform: translateY(-50%) scale(0.95); /* O mică animație de apăsare */
 }
 .lightbox-prev {
   left: 16px;
-  padding-right: 2px;
+  padding-right: 8px;
 }
 .lightbox-next {
   right: 16px;
-  padding-left: 2px;
+  padding-left: 8px;
 }
 
 .lightbox-arrow:focus {
@@ -944,7 +947,16 @@ footer {
   opacity: 1;
   transform: none;
 }
+@media (hover: hover) {
+  .lightbox-arrow {
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  }
 
+  .lightbox-arrow:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -963,35 +975,25 @@ footer {
 }
 
 /* ===== RESPONSIVE ===== */
-@media (width <=760px) {
-  :root {
-    --header-height: 74px;
-  }
+@media (width <= 1170px) {
   .hero {
     min-height: 0;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     padding-block: 55px 60px;
   }
-  .hero-text {
-    font-size: 15px;
+  .hero > div:first-child {
+    order: 1;
   }
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-  }
-  .hero-note {
-    margin-top: 28px;
-  }
-
   .hero-art {
+    order: 0;
     min-height: 430px;
+    display: grid;
+    place-items: center;
     --circle-size: 330px;
-    /* eliminăm orice offset; cercul se centrează perfect */
   }
   .art-circle {
-    /* centrat absolut pe ambele axe */
     inset: 0;
     margin: auto;
     width: var(--circle-size);
@@ -1000,27 +1002,58 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    transform: none; /* anulăm translate-ul anterior */
+    transform: none;
   }
   .poster-frame {
-    --poster-width: 260px; /* mai mare decât înainte (220px) */
+    --poster-width: 260px;
     height: 350px;
     justify-self: center;
     margin-inline-end: 0;
     transform: rotate(2deg);
-    /* centrat vertical de grid (place-items: center) */
+    margin-left: 35px;
+  }
+  .poster-frame img {
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+@media (width <= 770px) {
+  :root {
+    --header-height: 74px;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-block: 40px 50px;
+  }
+  .hero > div:first-child {
+    order: 1;
+  }
+  .hero-art {
+    order: 0;
+    min-height: 380px;
+    --circle-size: 280px;
+  }
+  .art-circle {
+    width: var(--circle-size);
+    height: var(--circle-size);
+    inset: 0;
+    margin: auto;
+    transform: none;
+  }
+  .poster-frame {
+    --poster-width: 220px;
+    height: 300px;
+    justify-self: center;
+    margin-inline-end: 0;
+    transform: rotate(2deg);
+    margin-left: 30px;
+    margin-right: 0;
   }
   .poster-frame img {
     object-fit: cover;
-    object-position: center;
-  }
-
-  /* ajustăm poziția scânteilor */
-  .sparkle-one {
-    inset: 60px auto auto 60px;
-  }
-  .sparkle-two {
-    inset: auto 60px 60px auto;
   }
 
   .menu-toggle {
@@ -1058,7 +1091,7 @@ footer {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .footer-grid>div:first-child {
+  .footer-grid > div:first-child {
     grid-column: 1 / -1;
   }
   .footer-bottom {
@@ -1080,7 +1113,7 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
   .catalog-card img {
-    height: clamp(300px, 60vw, 400px); /* mărite față de 240px */
+    height: clamp(300px, 60vw, 400px);
     object-fit: contain;
     background: #f7eee8;
   }
@@ -1092,13 +1125,15 @@ footer {
     width: 40px;
     height: 40px;
     font-size: 28px;
-    line-height: 27px;
+    line-height: 1;
   }
   .lightbox-prev {
     left: 8px;
+    padding-right: 3px;
   }
   .lightbox-next {
     right: 8px;
+    padding-left: 3px;
   }
   .lightbox-close {
     inset: 10px 12px auto auto;
@@ -1115,7 +1150,7 @@ footer {
   }
 }
 
-@media (width <=560px) {
+@media (width <= 560px) {
   .value-band {
     gap: 6px 14px;
     padding-inline: 16px;
@@ -1126,27 +1161,50 @@ footer {
     grid-template-columns: 1fr;
   }
   .catalog-card img {
-    height: 340px; /* și mai mari pe ecrane foarte mici */
+    height: 340px;
     object-fit: contain;
   }
   .hero-art {
-    --circle-size: 280px;
-    min-height: 380px;
+    --circle-size: 260px;
+    min-height: 340px;
   }
   .poster-frame {
-    --poster-width: 220px;
-    height: 300px;
+    --poster-width: 200px;
+    height: 270px;
   }
 }
 
-@media (width <=380px) {
+@media (width <= 480px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  .hero-text {
+    font-size: 14px;
+  }
   .hero-art {
-    --circle-size: 230px;
-    min-height: 320px;
+    --circle-size: 200px;
   }
   .poster-frame {
-    --poster-width: 180px;
-    height: 250px;
+    --poster-width: 160px;
+    height: 220px;
+  }
+  .signup-card {
+    padding: 20px 16px;
+  }
+  .catalog-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
+
+@media (width <= 380px) {
+  .hero-art {
+    --circle-size: 180px;
+    min-height: 280px;
+  }
+  .poster-frame {
+    --poster-width: 140px;
+    height: 190px;
     border-width: 6px;
   }
   .lightbox {
@@ -1160,8 +1218,10 @@ footer {
   }
   .lightbox-prev {
     left: 2px;
+    padding-right: 2px;
   }
   .lightbox-next {
     right: 2px;
+    padding-left: 2px;
   }
 }
